@@ -46,6 +46,13 @@ console.log(gbp)
 // 4: Display a list of all items who are made of wood.
 function question4 () {
   // Answer:
+  let woodenItems = [];
+  for(let i = 0; i < data.length; i++) {
+    if(/wood/.test(data[i].materials)) {
+      woodenItems.push(data[i].title);
+    }
+  }
+  console.log(woodenItems);
 }
 
 
@@ -53,6 +60,14 @@ function question4 () {
 //    Display the name, number of items and the items it is made of.
 function question5 () {
   // Answer:
+  let items = [];
+
+  for(let i = 0; i < data.length; i++) {
+    if(data[i].materials.length >= 8) {
+      items.push(data[i].title + " " + "made of" + " " + data[i].materials.length + " materials");
+    }
+  }
+  console.log(items);
 }
 
 
@@ -60,4 +75,11 @@ function question5 () {
 // Answer:
 function question6 () {
   // Answer:
+  let sellerItems = [];
+  for(let i = 0; i < data.length; i++) {
+    if(data[i].who_made === "i_did") {
+      sellerItems.push(data[i]);
+    }
+  }
+  console.log(sellerItems.length + " items were made by their sellers.");
 }
